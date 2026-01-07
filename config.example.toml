@@ -1,0 +1,34 @@
+[paths]
+# クリーンアップ対象のルートディレクトリ
+# 複数のパスを指定可能。外部ディスクが見つからない場合は警告が表示されます。
+scan_roots = ["/Volumes/Dev-SSD/dev"]
+
+# 除外するディレクトリ名（target以外も指定可能）
+exclude_dirs = ["node_modules", ".git"]
+
+[cleanup]
+# targetディレクトリのみをクリーンアップ
+target_only = true
+
+# 最小サイズ（MB）これ以下は削除しない
+min_size_mb = 10
+
+[logging]
+# ログファイルのパス
+log_file = "~/.local/share/cargo-clean-all/clean.log"
+
+# ログレベル (debug, info, warn, error)
+level = "info"
+
+# ログローテーション（ファイル数）
+max_files = 10
+
+[notification]
+# 通知を有効化
+enabled = true
+
+# 通知のタイトル
+title = "Cargo Clean All"
+
+# エラー時のみ通知
+error_only = false

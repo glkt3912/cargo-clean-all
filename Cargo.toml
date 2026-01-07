@@ -1,0 +1,21 @@
+[package]
+name = "cargo-clean-all"
+version = "0.1.0"
+edition = "2021"
+description = "Clean all Rust target directories with logging and notifications"
+license = "MIT"
+repository = "https://github.com/yourusername/cargo-clean-all"
+keywords = ["cargo", "clean", "rust", "cli", "cleanup"]
+categories = ["command-line-utilities", "development-tools"]
+
+[[bin]]
+name = "cargo-clean-all"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+walkdir = "2"
+chrono = "0.4"
+anyhow = "1"
