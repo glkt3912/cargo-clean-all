@@ -23,7 +23,7 @@ Rustプロジェクトの`target`ディレクトリを定期的にクリーン�
 ### 簡単インストール（推奨）
 
 ```bash
-git clone https://github.com/yourusername/cargo-clean-all.git
+git clone https://github.com/glkt3912/cargo-clean-all.git
 cd cargo-clean-all
 ./install.sh
 ```
