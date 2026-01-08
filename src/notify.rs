@@ -7,10 +7,7 @@ pub fn send_notification(title: &str, message: &str) {
         escape_quotes(title)
     );
 
-    let _ = Command::new("osascript")
-        .arg("-e")
-        .arg(&script)
-        .output();
+    let _ = Command::new("osascript").arg("-e").arg(&script).output();
 }
 
 fn escape_quotes(s: &str) -> String {

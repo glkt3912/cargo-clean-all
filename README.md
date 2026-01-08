@@ -29,6 +29,7 @@ cd cargo-clean-all
 ```
 
 インストーラーが以下を自動実行します：
+
 1. バイナリのビルドとインストール（`~/.cargo/bin/`）
 2. デフォルト設定ファイルの作成
 3. 自動週次クリーンアップの設定（オプション）
@@ -64,7 +65,7 @@ cargo-clean-all --verbose
 
 ### 実行例
 
-```
+```text
 🔍 Scanning /path/to/projects...
    Found 3 target directories
 🧹 Cleaning 3 target directories...
@@ -224,7 +225,7 @@ ls -la /Volumes/Dev-SSD/dev
 
 **出力例**:
 
-```
+```text
 ⚠️  Warning: Path not found: /Volumes/Dev-SSD/dev
 
 ⚠️  Warning: 1 path(s) not accessible

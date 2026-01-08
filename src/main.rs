@@ -79,7 +79,10 @@ fn main() -> anyhow::Result<()> {
         }
 
         if !args.dry_run {
-            println!("\n⚠️  Warning: {} path(s) not accessible", missing_paths.len());
+            println!(
+                "\n⚠️  Warning: {} path(s) not accessible",
+                missing_paths.len()
+            );
             println!("This may happen if external drives are not mounted.");
         }
 
@@ -176,7 +179,10 @@ fn main() -> anyhow::Result<()> {
                     success_count, error_count, freed_mb
                 )
             } else {
-                format!("Cleaned {} directories. Freed {:.2} MB", success_count, freed_mb)
+                format!(
+                    "Cleaned {} directories. Freed {:.2} MB",
+                    success_count, freed_mb
+                )
             };
             notify::send_notification(&config.notification.title, &message);
         }

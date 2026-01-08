@@ -30,18 +30,17 @@ pub fn scan_target_directories(root: &str, exclude_dirs: &[String]) -> ScanResul
             let name = e.file_name().to_string_lossy();
             !exclude_dirs.iter().any(|ex| name == ex.as_str())
         })
+        .flatten()
     {
-        if let Ok(entry) = entry {
-            if entry.file_type().is_dir() && entry.file_name() == "target" {
-                // Cargo.tomlが親ディレクトリにあるか確認
-                if let Some(parent) = entry.path().parent() {
-                    if parent.join("Cargo.toml").exists() {
-                        let size = calculate_dir_size(entry.path());
-                        targets.push(TargetDir {
-                            path: entry.path().to_path_buf(),
-                            size_bytes: size,
-                        });
-                    }
+        if entry.file_type().is_dir() && entry.file_name() == "target" {
+            // Cargo.tomlが親ディレクトリにあるか確認
+            if let Some(parent) = entry.path().parent() {
+                if parent.join("Cargo.toml").exists() {
+                    let size = calculate_dir_size(entry.path());
+                    targets.push(TargetDir {
+                        path: entry.path().to_path_buf(),
+                        size_bytes: size,
+                    });
                 }
             }
         }
